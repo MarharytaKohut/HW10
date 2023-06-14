@@ -1,13 +1,24 @@
 import java.util.Arrays;
+import java.util.Random;
 
 public class Rugby {
     public static void main(String[] args) {
-
-        int[] Red = new int[]{18, 18, 18, 25, 28, 33, 40, 37, 29, 39, 21, 22, 40, 37, 31, 29, 30, 18, 24, 27, 30, 24, 34, 37, 29};
-        int[] Blue = new int[]{31, 23, 25, 26, 39, 40, 29, 20, 36, 31, 40, 18, 20, 26, 22, 38, 34, 40, 19, 20, 18, 38, 27, 22, 31};
-        System.out.println(Arrays.toString(Red));
-        System.out.println(Arrays.toString(Blue));
-        //double average = (double) (Red + Blue) / 2;
-        //System.out.println(average);
+        Random random = new Random();
+        int[] array1 = new int[25];
+        int[] array2 = new int[25];
+        int sumTeam1 = 0;
+        int sumTeam2 = 0;
+        for (int i = 0; i < array1.length; i++) {
+            array1[i] = random.nextInt(22) + 18;
+            array2[i] = random.nextInt(22) + 18;
+            sumTeam1 += array1[i];
+            sumTeam2 += array2[i];
+        }
+        System.out.println(Arrays.toString(array1));
+        System.out.println(Arrays.toString(array2));
+        System.out.println(sumTeam1);
+        System.out.println(sumTeam2);
+        System.out.println((double)sumTeam1/ array1.length);
+        System.out.println((double)sumTeam2/ array2.length);
     }
 }
